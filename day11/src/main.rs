@@ -89,6 +89,8 @@ fn parse_input(fname: &str) -> Vec<Monkey> {
 }
 
 fn simulate_monkey_rounds(mut monkeys: Vec<Monkey>, rounds: usize, relief: bool) -> Vec<Monkey> {
+    // the "worry level" will eventually get too big for even u128 to handle, we need to
+    // reduce the value so that that doesn't happen
     let lcm = monkeys
         .iter()
         .map(|monke| monke.test_divisible_by as WorryLvl)
