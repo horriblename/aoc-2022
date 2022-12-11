@@ -60,7 +60,8 @@ fn parse_input(fname: &str) -> Vec<Monkey> {
                 .expect("error reading input file")
         }; // FIXME
 
-        let monke = parse_unwrap(&get_line()[7..8]); // there are less than 10 monkeys
+        let monke = parse_unwrap(&get_line()[7..8]); // there are less than 10 monkeys, just take 1
+                                                     // digit
         let items = get_line()[18..]
             .split(',')
             .map(|item| item.trim().parse().expect("error parsing string into u64"))
