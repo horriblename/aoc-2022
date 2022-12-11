@@ -11,7 +11,6 @@ pub struct Directory {
     name: String,
     parent: Option<Weak<RefCell<Directory>>>,
     children: Vec<Box<Node>>,
-    // children: Box<Vec<Directory>>,
 }
 
 #[allow(dead_code)]
