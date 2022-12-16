@@ -119,8 +119,6 @@ def solve2(fname: str, size_limit: int) -> int:
         )
         emptyRanges.sort(key=lambda rg: rg.start)
 
-        print()
-
         rg = emptyRanges[0]
         for other in emptyRanges[1:]:
             if rg.end > size_limit:
@@ -129,12 +127,9 @@ def solve2(fname: str, size_limit: int) -> int:
             if rg.merge(other):
                 continue
 
-            print(f"rolling range: {rg}, other: {other}, on row: {j}")
-
             sus_from = rg.end + 1
             sus_till = other.start - 1
             assert sus_from == sus_till
-            print(f"found sus ({sus_from}, {j})")
             return tuningFreq(sus_from, j)
 
     return -1
