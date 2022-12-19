@@ -1,8 +1,6 @@
 # python version 3.10.8: can't refer to Self type in classes
 from __future__ import annotations
 import unittest
-import time
-from functools import reduce
 
 
 Coord = tuple[int, int]
@@ -99,9 +97,6 @@ class Sensor:
         if abs(self.y - row) > rad:
             return Range(-1, -1)
         return Range(*rangeEmptyOnLine((self.x, self.y), rad, row))
-
-    # def getRowsConsiderationRange(self) -> tuple[int, int]:
-    #     return
 
 
 def tuningFreq(x: int, y: int) -> int:
